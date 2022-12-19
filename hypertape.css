@@ -5,11 +5,17 @@ body {
 
 main {
     margin: 0px auto 0px auto;
-    max-width: 300em;
+    max-width: 50em;
 }
 
 header {
-    background-color: #f0e5e5;
+    padding-bottom: 1em;
+    border-bottom: 1px solid black;
+}
+
+
+header h1,#title {
+    margin-top:0px;
 }
 
 article,.post {

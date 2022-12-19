@@ -10,7 +10,7 @@ function template(posts,submission=null) {
 <body>
 <main>
 <header>
-<h1> Hypertape </h1>
+<h1 id="title"> Hypertape </h1>
 <form method="POST" class="form-example">
     <label for="submission"></label>
     <textarea name="submission" id="submission" rows="6" cols="80" required></textarea>
