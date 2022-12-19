@@ -26,9 +26,16 @@ export async function onRequest(context) {
     // Extract submission
     let submission = null;
     const req = context.request;
+    const {method, headers} = req;
     if (req.method == 'POST') {
-        submission = request.body;
-        posts.unshift(submission);
+        const contentType = headers.get('content-type') || '';
+        if (contentType.includes('form')) {
+            const formData = await req.formData();
+            if (formData.has('submission')) {
+                submission = formData.get('submission');
+                posts.unshift(submission);
+            }
+        }
     }
     return new Response(
         template(posts,submission),
