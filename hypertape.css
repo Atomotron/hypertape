@@ -1,0 +1,21 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    margin: 0px auto 0px auto;
+    max-width: 300em;
+}
+
+header {
+    background-color: #f0e5e5;
+}
+
+article,.post {
+    padding: 1em 0px 1em 0px;
+}
+
+#submission_received {
+    background-color: #e5f0e5;
+}

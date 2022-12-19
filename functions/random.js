@@ -7,6 +7,8 @@ function template(posts,submission=null) {
     <meta charset="utf-8">
 </head>
 <body>
+<main>
+<header>
 <h1> Hypertape </h1>
 <form method="POST" class="form-example">
     <label for="submission"></label>
@@ -14,7 +16,9 @@ function template(posts,submission=null) {
     <input type="submit" value="Post">
 </form>
     ${submissionReceived}
-    <div class='post'>${posts.join('</div>\n<div class="post">')}</div>
+</header>
+    <article class='post'>${posts.join('</article>\n<article class="post">')}</article>
+</main>
 </body>
 </html>`;
 }
