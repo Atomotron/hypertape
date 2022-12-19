@@ -12,7 +12,7 @@ function template(posts,submission=null) {
 <header>
 <h1 id="title"> Hypertape </h1>
 <form method="POST" class="form-example">
-    <label for="submission"></label>
+    <label for="submission">Write text or HTML here, then click post to add it to the page!</label>
     <textarea name="submission" id="submission" rows="6" cols="80" required></textarea>
     <input type="submit" value="Post">
 </form>
