@@ -1,6 +1,6 @@
 function template(posts,submission=null) {
     const submissionReceived = submission ? 
-    `<div id="submission_received">Your submission has been received. (${Date()})</div>` : '';
+    `<div id="submission_received">Your submission was received on ${Date()}.</div>` : '';
     return `<!doctype html>
 <html lang="en">
 <head>
