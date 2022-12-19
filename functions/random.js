@@ -30,5 +30,11 @@ export async function onRequestGet(context) {
         submission = request.body;
         posts.unshift(submission);
     }
-    return new Response(template(posts,submission));
+    return new Response(
+        template(posts,submission),
+        {
+        headers: {
+            'content-type': 'text/html;charset=UTF-8',
+        },
+   );
 }
