@@ -22,6 +22,7 @@ header h1,#title {
 
 article,.post {
     padding: 1em 0px 1em 0px;
+    border-bottom: 1px solid #d0d0d0;
 }
 
 article img {
