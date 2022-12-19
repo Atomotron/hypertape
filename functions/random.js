@@ -10,7 +10,7 @@ function template(posts,submission=null) {
 <h1> Hypertape </h1>
 <form method="POST" class="form-example">
     <label for="submission"></label>
-    <input type="text" name="submission" id="submission" required>
+    <input type="textarea" name="submission" id="submission" required>
     <input type="submit" value="Post">
 </form>
     ${submissionReceived}
@@ -19,7 +19,7 @@ function template(posts,submission=null) {
 </html>`;
 }
 
-export async function onRequestGet(context) {
+export async function onRequest(context) {
     const posts = JSON.parse(
         await context.env.HYPERTAPE_KV.get("hypertape-blob")
     );
