@@ -8,13 +8,13 @@ function template(posts,submission=null) {
 </head>
 <body>
 <h1> Hypertape </h1>
-<form action="" method="get" class="form-example">
+<form method="POST" class="form-example">
     <label for="submission"></label>
     <input type="text" name="submission" id="submission" required>
     <input type="submit" value="Post">
 </form>
     ${submissionReceived}
-    <div class='post'>${posts.join('</div>\n<div class='post'>')}</div>
+    <div class='post'>${posts.join('</div>\n<div class="post">')}</div>
 </body>
 </html>`;
 }
@@ -23,6 +23,12 @@ export async function onRequestGet(context) {
     const posts = JSON.parse(
         await context.env.HYPERTAPE_KV.get("hypertape-blob")
     );
-    const submission = false;
+    // Extract submission
+    let submission = null;
+    const req = context.request;
+    if (req.method == 'POST') {
+        submission = request.body;
+        posts.unshift(submission);
+    }
     return new Response(template(posts,submission));
 }
