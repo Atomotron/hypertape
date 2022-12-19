@@ -18,6 +18,7 @@ textarea {
     background-color: #191919;
     color: #f0f0f0;
     width:100%;
+    border: none;
 }
 
 #submission_received {
