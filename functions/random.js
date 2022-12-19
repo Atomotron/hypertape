@@ -1,3 +1,5 @@
 export function onRequest(context) {
-    return new Response(`${Math.random()*100}`);
+    return new Response(`Requested ${Date()}.
+${JSON.parse(HYPERTAPE_KV.get("hypertape-blob")).join('\n')}
+`);
 }
