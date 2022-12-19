@@ -5,6 +5,7 @@ function template(posts,submission=null) {
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="hypertape.css">
 </head>
 <body>
 <main>
