@@ -34,6 +34,9 @@ export async function onRequest(context) {
             if (formData.has('submission')) {
                 submission = formData.get('submission');
                 posts.unshift(submission);
+                // Send new data to KV store.
+                const newValue = JSON.stringify(posts);
+                await context.env.HYPERTAPE_KV.put("hypertape-blob",newValue);
             }
         }
     }
