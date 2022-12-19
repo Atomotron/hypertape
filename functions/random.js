@@ -1,5 +1,5 @@
-export async function onRequest(context) {
-    return new Response(`Requested ${Date()}.
-${JSON.parse(await HYPERTAPE_KV.get("hypertape-blob")).join('\n')}
-`);
+export async function onRequestGet(context) {
+    const blob = await context.env.HYPERTAPE_KV.get("hypertape-blob");
+    return new Response(`Requested ${Date()}
+${blob}`);
 }
