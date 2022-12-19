@@ -10,7 +10,7 @@ function template(posts,submission=null) {
 <h1> Hypertape </h1>
 <form method="POST" class="form-example">
     <label for="submission"></label>
-    <input type="textarea" name="submission" id="submission" rows="6" cols="80" required>
+    <textarea name="submission" id="submission" rows="6" cols="80" required></textarea>
     <input type="submit" value="Post">
 </form>
     ${submissionReceived}
